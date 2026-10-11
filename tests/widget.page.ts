@@ -21,7 +21,7 @@ export class WidgetPage {
     }
 
     async openWidget() {
-        const button = this.wrapper().locator(WidgetPage.selector.BUTTON_OPEN);
+        const button = this.page.locator(WidgetPage.selector.BUTTON_OPEN);
         await button.waitFor({ state: 'visible', timeout: 10000 });
         return button.click();
     }
