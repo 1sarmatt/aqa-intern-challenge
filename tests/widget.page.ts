@@ -30,6 +30,14 @@ export class WidgetPage {
         return this.wrapper().locator(WidgetPage.selector.ARTICLE_POPULAR_LIST_ITEM).all()
     }
 
+    getPopularArticlesTitle() {
+        return this.wrapper().locator(WidgetPage.selector.ARTICLE_POPULAR_TITLE);
+    }
+
+    getFirstPopularArticle() {
+        return this.wrapper().locator(WidgetPage.selector.ARTICLE_POPULAR_LIST_ITEM).first();
+    }
+
     async clickFirstPopularArticle() {
         await this.wrapper().locator(WidgetPage.selector.ARTICLE_POPULAR_LIST_ITEM).first().click();
     }

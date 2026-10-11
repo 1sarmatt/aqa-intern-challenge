@@ -34,4 +34,14 @@ test.describe('Uchi.ru widget ', () => {
 
     expect(await widgetPage.getTitle()).toEqual('Связь с поддержкой');
   });
+
+  test('displays popular articles list', async ({ page }) => {
+    await widgetPage.openWidget();
+
+    // Проверяем, что заголовок популярных статей виден
+    await expect(widgetPage.getPopularArticlesTitle()).toBeVisible();
+    
+    // Проверяем, что первая статья из списка видна
+    await expect(widgetPage.getFirstPopularArticle()).toBeVisible();
+  });
 });
